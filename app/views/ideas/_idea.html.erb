@@ -1,16 +1,16 @@
 <div id="<%= dom_id idea %>">
   <p>
-    <strong>Name:</strong>
+    <strong>思いついたフレーズ:</strong>
     <%= idea.name %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>どんな時に思いついた？:</strong>
     <%= idea.description %>
   </p>
 
   <p>
-    <strong>Picture:</strong>
+    <strong>その時の思い出写真:</strong>
     <%= image_tag(idea.picture_url, width: 600) if idea.picture? %>
   </p>
 
