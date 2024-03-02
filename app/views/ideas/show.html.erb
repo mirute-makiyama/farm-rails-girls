@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @idea %>
+<div id="<%= dom_id @idea %>" class="d-flex gap-3 py-3">
+  <div class="d-flex flex-column gap-2 w-100">
+    <h1><%= @idea.name %></h1>
+    <p><%= @idea.description %></p>
+    <small class="opacity-50 text-nowrap">最終更新日時 <%= time_ago_in_words @idea.updated_at %></small>
+  </div>
+  <%= image_tag(@idea.picture_url, width: 150, height: 150, class: "img-thumbnail flex-shrink-0") if @idea.picture? %>
+</div>
 
-<div>
-  <%= link_to "編集する", edit_idea_path(@idea) %> |
-  <%= link_to "一覧に戻る", ideas_path %>
-
-  <%= button_to "このフレーズを削除する", @idea, method: :delete %>
+<div class="d-flex gap-3 py-3">
+  <%= link_to "編集する", edit_idea_path(@idea), class: "btn btn-primary" %>
+  <%= link_to "一覧に戻る", ideas_path, class: "btn btn-outline-secondary" %>
+  <%= button_to "このフレーズを削除する", @idea, method: :delete, class: "btn btn-danger", form: { data: { turbo_confirm: "本当に消しても良いですか?" } } %>
 </div>
