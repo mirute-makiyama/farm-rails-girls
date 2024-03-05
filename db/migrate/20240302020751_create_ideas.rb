@@ -4,6 +4,7 @@ class CreateIdeas < ActiveRecord::Migration[7.1]
       t.string :name
       t.text :description
       t.string :picture
+      t.date :uploaded_at
 
       t.timestamps
     end

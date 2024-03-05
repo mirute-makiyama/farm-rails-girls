@@ -11,20 +11,25 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, "思いついたフレーズ", style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="my-4">
+    <%= form.label :name, "思いついたフレーズ", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :description, "どんな時に思いついた？", style: "display: block" %>
-    <%= form.text_area :description %>
+  <div class="my-4">
+    <%= form.label :description, "どんな時に思いついた？", class: "form-label" %>
+    <%= form.text_area :description, class: "form-control"  %>
+  </div>
+  
+  <div class="my-4">
+    <%= form.label :picture, "その時の思い出写真", class: "form-label" %>
+    <%= form.file_field :picture, class: "form-control"  %>
   </div>
 
-  <div>
-    <%= form.label :picture, "その時の思い出写真", style: "display: block" %>
-    <%= form.file_field :picture %>
-  </div>
+  <div class="my-4">
+  <%= form.label :updated_at, "思いついた日", class: "form-label" %>
+  <%= form.date_field :updated_at, class: "form-control"  %>
+</div>
 
   <div class="d-flex gap-3 py-3">
     <%= form.submit "登録する", class: "btn btn-primary"%>
